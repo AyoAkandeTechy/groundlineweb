@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manpower Booking | Groundline Cleaning & Hospitality Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/logo.png" alt="Groundline Cleaning & Hospitality Services logo" class="logo"><h1>Groundline Cleaning &amp; Hospitality Services</h1>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="manpower-booking.html" class="active">Manpower Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 28px;">
+    <h1>Manpower Booking</h1>
+    <p class="notice">
+      Use this form to request cleaning or hospitality manpower support. We’ll respond promptly to confirm availability,
+      pricing, and deployment schedule.
+    </p>
+
+    <section style="margin-top: 18px;">
+      <form id="bookingForm" class="notice" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullName">Full Name *</label>
+            <input id="fullName" name="fullName" type="text" required placeholder="Your name">
+          </div>
+
+          <div class="field">
+            <label for="companyName">Company / Household</label>
+            <input id="companyName" name="companyName" type="text" placeholder="Company name (optional)">
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone *</label>
+            <input id="phone" name="phone" type="tel" required placeholder="+974 ...">
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required placeholder="you@email.com">
+          </div>
+
+          <div class="field full">
+            <label for="serviceAddress">Service Location *</label>
+            <input id="serviceAddress" name="serviceAddress" type="text" required placeholder="Location where service is needed">
+          </div>
+
+          <div class="field">
+            <label for="serviceType">Service Type *</label>
+            <select id="serviceType" name="serviceType" required>
+              <option value="">Select one</option>
+              <option>Cleaning (Residential)</option>
+              <option>Cleaning (Office / Corporate)</option>
+              <option>Window Cleaning</option>
+              <option>Roof Washing</option>
+              <option>Housekeeping</option>
+              <option>Hospitality Support</option>
+              <option>Event Staffing</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="urgency">Urgency *</label>
+            <select id="urgency" name="urgency" required>
+              <option value="">Select one</option>
+              <option>Same day</option>
+              <option>Within 24 hours</option>
+              <option>Within 3 days</option>
+              <option>Within 1 week</option>
+              <option>Planned / Scheduled</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label>Manpower Needed *</label>
+            <div class="check-grid" role="group" aria-label="Manpower needed">
+              <label><input type="checkbox" name="roles" value="Cleaners"> Cleaners</label>
+              <label><input type="checkbox" name="roles" value="Housekeepers"> Housekeepers</label>
+              <label><input type="checkbox" name="roles" value="Window Cleaners"> Window Cleaners</label>
+              <label><input type="checkbox" name="roles" value="Roof Washing Team"> Roof Washing Team</label>
+              <label><input type="checkbox" name="roles" value="Kitchen Helpers"> Kitchen Helpers</label>
+              <label><input type="checkbox" name="roles" value="Chefs / Cooks"> Chefs / Cooks</label>
+              <label><input type="checkbox" name="roles" value="Waiters / Waitresses"> Waiters / Waitresses</label>
+              <label><input type="checkbox" name="roles" value="Stewards"> Stewards</label>
+              <label><input type="checkbox" name="roles" value="Supervisors"> Supervisors</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="staffCount">Number of Staff *</label>
+            <input id="staffCount" name="staffCount" type="number" min="1" required placeholder="e.g., 4">
+          </div>
+
+          <div class="field">
+            <label for="startDate">Preferred Start Date *</label>
+            <input id="startDate" name="startDate" type="date" required>
+          </div>
+
+          <div class="field">
+            <label for="duration">Duration *</label>
+            <select id="duration" name="duration" required>
+              <option value="">Select one</option>
+              <option>One-time job</option>
+              <option>1 day</option>
+              <option>2–3 days</option>
+              <option>1 week</option>
+              <option>2 weeks</option>
+              <option>1 month</option>
+              <option>Ongoing / Contract</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="shift">Shift *</label>
+            <select id="shift" name="shift" required>
+              <option value="">Select one</option>
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+              <option>Night</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="notes">Additional Details</label>
+            <textarea id="notes" name="notes" placeholder="Tell us any special requirements, equipment needs, or instructions..."></textarea>
+          </div>
+
+          <div class="field full" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <button type="submit" class="btn primary">Submit Request</button>
+            <a class="btn ghost" href="mailto:groundlinehospitality.qa@gmail.com?subject=Manpower%20Booking%20Request%20-%20Groundline">Send by Email</a>
+            <span id="formStatus" style="opacity:.9;"></span>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section style="margin-top: 22px;">
+      <h2>Need help?</h2>
+      <p>Call us on <strong>+974 3353 0536</strong> or email <a href="mailto:groundlinehospitality.qa@gmail.com">groundlinehospitality.qa@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p><strong>Call us:</strong> +974&nbsp;3353&nbsp;0536</p>
+        <p><strong>Email:</strong> <a href="mailto:groundlinehospitality.qa@gmail.com">groundlinehospitality.qa@gmail.com</a></p>
+        <p><strong>Office Address:</strong><br>
+          Al Muntanza Trading Center, Building 2,<br>
+          Street 830, Floor 1, Room 8, Office 808, Doha, Qatar
+        </p>
+      </div>
+
+      <div class="footer-sitemap">
+        <h3>Site Map</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="manpower-booking.html">Manpower Booking</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-map">
+        <h3>Find Us</h3>
+        <div class="map-embed">
+          <iframe
+            title="Groundline Office Location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Al%20Muntanza%20Trading%20Center%20Building%202%20Street%20830%20Doha%20Qatar&output=embed">
+          </iframe>
+        </div>
+        <div class="footer-social">
+          <a href="https://twitter.com/groundlineCH" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://instagram.com/groundlinech" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footnote">&copy; 2026 Groundline Cleaning &amp; Hospitality Services. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
